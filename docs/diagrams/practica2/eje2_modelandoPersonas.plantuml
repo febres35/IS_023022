@@ -1,0 +1,13 @@
+@startuml ejer_2
+header Modelado de personas
+
+class persona <<stereotype>>
+class estudiante
+class profesor
+class empleado
+
+persona <|-- estudiante
+persona <|-- empleado
+empleado  <|-- profesor
+
+@enduml

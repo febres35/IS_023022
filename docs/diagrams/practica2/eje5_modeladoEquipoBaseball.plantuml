@@ -1,0 +1,16 @@
+@startuml ejer_5
+package "Equipo" {
+    class Baseball
+    class Jugador
+}
+
+class Estadio
+Estadio --  Baseball
+
+Baseball *-- "9..*" Jugador
+'Baseball compuesto
+'Jugador componente
+'relacion Equipo Baseball "compuesto por"  9 o mas Jugadores
+
+
+

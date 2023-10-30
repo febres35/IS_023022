@@ -1,0 +1,31 @@
+@startuml ejer_6
+/'Un comité esta integrado por dos o más personas. Una persona puede o no pertenecer a
+comités. Cada comité tiene un coordinador que forma parte del comité y una misma
+persona puede coordinar más de un comité.
+'/
+
+
+class persona
+class coordinador
+class comite
+
+persona <|-- coordinador
+'un Coordinador es una persona
+'------------------------------------
+coordinador *--"*" comite
+'un coordinador puede pertenecer uno o mas comites
+'------------------------------------
+persona "2..*"*-- comite
+'un comite esta coformado por 2 o mas personas.
+
+/'Nota:
+    No supe como interpretar .."Una persona puede o no pertenecer a
+comités"..
+'/
+
+@enduml
+
+
+
+
+

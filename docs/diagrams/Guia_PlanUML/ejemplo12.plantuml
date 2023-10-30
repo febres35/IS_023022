@@ -1,0 +1,17 @@
+@startuml ejm12
+autonumber
+Bob -> Alice: Request
+Alice -> Bob: Response
+
+
+autonumber 15
+'Inicia en 15
+Bob -> Alice: Request
+Alice -> Bob: Response
+
+autonumber 40 10
+'Inicia en 40 e incrementa de 10 en 10
+Bob -> Alice: Request
+Alice -> Bob: Response
+
+@enduml

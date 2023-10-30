@@ -1,0 +1,24 @@
+@startuml ejer_8
+class equipo
+class eNuclear 
+equipo <|-- eNuclear
+'Equipo Nuclear es un especializacion de equipo
+
+class laboratorio
+laboratorio <|-- lNuclear
+'Laboratorio Nuclear es una especializacion de Laboratorio
+
+laboratorio o--"1..*" equipo
+'Laboratorio compuesto
+'Equipo componente
+'relacion Laboratorio compuesto por equipos
+lNuclear o--"1..*" eNuclear
+'Laboratorio Nuclear compuesto
+'Equipo Nuclear componente
+'relacion Laboratorio Nuclear compuesto por equipos Nucleares
+
+
+
+
+@enduml
+

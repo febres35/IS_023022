@@ -1,0 +1,6 @@
+@startuml ejm7
+participant Alice
+Alice -> Alice: This is a signal to self.\nIt also demostrates\nmultiline\ntext
+
+Alice <- Alice: This is a signal to self.\nIt also demostrates\nmultiline\ntext
+@enduml

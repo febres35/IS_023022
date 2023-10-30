@@ -1,0 +1,5 @@
+@startuml ejm8
+skinparam SequenceMessageAlignment right
+Bob -> Alice: Request
+Alice -> Bob: Response
+

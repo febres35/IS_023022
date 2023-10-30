@@ -1,0 +1,19 @@
+@startuml ejer_7
+class caracterizacion
+class criterio
+
+caracterizacion -- "1..*" criterio
+
+class clasificacion { 
+    -{field} caract: caracterizacion
+}
+clasificacion ..> criterio
+
+@enduml
+
+
+
+
+
+
+

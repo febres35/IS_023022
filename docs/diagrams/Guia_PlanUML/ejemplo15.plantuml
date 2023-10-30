@@ -1,0 +1,11 @@
+@startuml ejm15
+
+header Page Header
+footer Page %page% of %lastpage%
+
+title Example Title
+
+Bob -> Alice: Request
+Alice -> Bob: Response 
+
+@enduml

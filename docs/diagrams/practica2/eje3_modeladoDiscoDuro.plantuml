@@ -1,0 +1,15 @@
+@startuml ejer_3
+object Disco 
+object Piasta 
+object Sector
+
+Disco "1" *-- "1..*" Piasta
+'Disco = compuesto
+'Pista = componente
+'Relacion Disco "compuesto por" Pistas
+Piasta "1"*-- "1..*" Sector
+'Pista = compuesto
+'Sector = componente
+'Relacion Pista "compuesto por" Sector
+
+@enduml

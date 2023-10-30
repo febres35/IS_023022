@@ -1,0 +1,27 @@
+@startuml ejer_9
+/'
+La ecuación de FP tiene 2 operandos, el primero es UFC, el segundo es TCF. Los TCF
+dependen de la valoración de 14 subfactores de complejidad técnica (Fi)
+'/
+
+class FP
+class UFC
+class TCF
+
+FP --"1" UFC
+'Ecuacion FP
+'Operando UFC
+'Relacion Asociacion: La Ecuacion FP tiene el Operando UFC asociado
+FP --"1" TCF
+'Ecuacion FP
+'Operando UFC
+'Relacion Asociacion: La Ecuacion FP tiene el Operando TCF asociado
+
+
+class FI
+TCF ..>"14" FI
+'Operando TCF
+'Factor FI
+'Relacion Dependencia: El Operando TCF depende de 14 FI
+
+@enduml

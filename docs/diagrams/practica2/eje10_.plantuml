@@ -1,0 +1,24 @@
+@startuml ejer_10
+
+
+class TI
+note "Trabajo de Investigacion (TI)" as ti 
+TI .. ti
+
+class TEG
+TI <|-- TEG
+
+class TGM
+TI <|-- TGM
+
+class Profesor
+Profesor "1,2"<.."1..*" TI: Tutor
+
+class Estudiante
+
+TEG "1"..>"1" Estudiante
+
+TGM "1"..>"1,2" Estudiante
+
+
+@enduml

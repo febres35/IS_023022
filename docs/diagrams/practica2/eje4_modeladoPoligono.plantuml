@@ -1,0 +1,18 @@
+@startuml ejer_4
+
+class Poligono {
+    -{field} lado: integer
+    +{method} setLado:
+    +{method} getLado:
+}
+
+object Triangulo {
+    lado = 3
+}
+
+Poligono -- Triangulo
+note "Triangulo es una instancia de Poligono" as n
+Triangulo .. n
+
+@enduml
+

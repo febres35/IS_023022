@@ -1,0 +1,23 @@
+@startuml ejer_11
+/'
+Suponga que un documento gráfico está compuesto de hojas. Cada hoja contiene un
+objeto dibujo. Un objeto dibujo puede ser: texto, figura 2D, o grupo. Un grupo consta de
+al menos dos objetos dibujo. Un objeto de dibujo puede ser a lo sumo miembro de un
+grupo. Una figura 2D puede ser circulo o cuadrado.
+'/
+
+class documento
+class hoja
+
+documento "1" *--"1..*" hoja: composición
+
+class dibujo
+hoja "1" o--"1" dibujo: agregación
+/'
+Existe una contradiccion
+'/
+
+
+
+@enduml
+

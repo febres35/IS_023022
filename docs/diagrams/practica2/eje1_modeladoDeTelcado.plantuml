@@ -1,0 +1,12 @@
+@startuml ejer_1
+title Modelado de Teclado
+
+object Teclado
+object Tecla
+
+Teclado o-- "105..*" Tecla
+'Teclado = Compuesto
+'Tecla = Componente
+'Relacion = Teclado "Compuesto por" 105 o mas telcas
+
+@enduml

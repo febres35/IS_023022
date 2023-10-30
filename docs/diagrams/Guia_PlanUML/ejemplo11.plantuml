@@ -1,0 +1,7 @@
+@startuml ejm11
+Bob -[#red]> Alice: Hello
+Alice -[#000099]-> Bob: ok 
+
+@enduml
+
+

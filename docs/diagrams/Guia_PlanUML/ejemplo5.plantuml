@@ -1,0 +1,11 @@
+@startuml ejm5
+
+participant Participant [
+    =Title
+    ----
+    ""SubTitle""
+]
+
+participant Bob
+Participant -> Bob
+@enduml

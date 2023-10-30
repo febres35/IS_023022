@@ -1,0 +1,18 @@
+@startuml ejm13
+autonumber 10 10 "<b>[000]"
+Bob -> Alice: Authentication Request
+Alice -> Bob: Authentication Response
+
+autonumber stop 
+Bob -> Alice: summy
+
+autonumber resume "<font color=red><b> Message 0 "
+Bob -> Alice: Another Authentication Request
+Alice -> Bob: Another Authentication Response
+
+autonumber stop 
+Bob -> Alice: summy
+
+autonumber resume 1 "<font color=red><b>Message 0 "
+Bob -> Alice: Yet another authentiction Request
+Alice -> Bob: Yet another authentiction  Response

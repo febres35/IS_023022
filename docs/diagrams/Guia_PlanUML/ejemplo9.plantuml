@@ -1,0 +1,6 @@
+@startuml ejm9
+skinparam ResponseMessageBelowArrow true
+Bob -> Alice: Hello
+Alice -> Bob: ok
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml ejm3
+actor Bob #Red
+'The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99ff99
+/'you can also declare:
+    participant L as "I hace really\nlong name" #99ff99
+    '/
+Alice -> Bob: Authentication Request
+Bob -> Alice: Authentication Response
+Bob -> L: Log transaction
+
+@enduml
+
+
