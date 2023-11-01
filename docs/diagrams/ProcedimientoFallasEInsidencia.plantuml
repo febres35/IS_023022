@@ -1,0 +1,37 @@
+@startuml FallaEinsidencia
+
+
+(*) -left->  Contacto
+-->[Falla /\n Incidencia] "CIC"
+"CIC" -right-> Ticket
+
+-right-> if <b>Seguimiento\n<b>de falla\n¿Continua La Falla?  then 
+    --> [Si] "Se mantiene\nel ticket abierto" 
+    --> Ticket
+    
+else
+    --> [no]  "Cierra ticket"
+    -->[Notifica al Usuario] notifica
+    notifica --> (*)
+
+endif
+
+    
+"CIC" -->[Notifica inicio\nde falla] ===B1===
+===B1=== --> [Estatus] "CIC"
+===B1=== --> Custodio
+note left
+"Se le notifica"
+end note
+===B1=== --> [Canaliza] UsuarioAdmin
+UsuarioAdmin --> [Estatus] ===B1=== 
+
+UsuarioAdmin --> [Atiende] ===B2=== 
+===B2=== -->[Estatus] UsuarioAdmin 
+===B2=== --> Desarrollo
+===B2=== --> Hosting SO
+===B2=== --> Hosting BBDD
+===B2=== --> Hosting CSAL
+
+
+@enduml

@@ -1,0 +1,67 @@
+@startuml practica2_reto_f
+
+header "Representacion de clases"
+title "Juegos Panamericanos"
+    
+
+abstract Persona  {
+    -nombre
+    -telefono
+    -direccion
+} 
+class Entrenador{
+    -nivel
+    -experiencia
+}
+
+class Juego {
+    -Localidad
+    -Puntuacion
+}
+
+class Equipo{
+    -nombre
+    -capitan
+}
+
+class Registro {
+    -idJugador
+    -Record
+}
+
+class Jugador {
+    -numero
+    -posicion
+}
+
+
+
+Equipo "1" o-right-"6..20" Jugador: >
+(Equipo, Jugador) .. Registro
+Persona <|-- Jugador
+Persona <|-left- Entrenador
+Juego "1" o-right- "2" Equipo: < 
+Equipo "<b>*" *-up- "<b> 1 " Entrenador 
+(Equipo, Juego) .. Competencia
+
+
+newpage 
+
+object Persona {
+    Leo1
+    042412345678
+    La Guaira
+}
+
+object Registro {
+    "1"
+    "250"
+}
+
+
+
+
+
+
+
+@enduml
