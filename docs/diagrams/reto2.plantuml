@@ -21,7 +21,8 @@ class Juego {
 
 class Equipo{
     -nombre
-    -capitan
+    -pais
+
 }
 
 class Registro {
@@ -34,34 +35,114 @@ class Jugador {
     -posicion
 }
 
+Class Capitan
 
-
-Equipo "1" o-right-"6..20" Jugador: >
-(Equipo, Jugador) .. Registro
+Equipo "1" o-right-"6..20" Jugador: Parte de <
+Equipo *--  Registro
 Persona <|-- Jugador
-Persona <|-left- Entrenador
-Juego "1" o-right- "2" Equipo: < 
-Equipo "<b>*" *-up- "<b> 1 " Entrenador 
-(Equipo, Juego) .. Competencia
-
+Persona <|-left- Entrenador: Hereda de <
+Juego "1" *-right- "2" Equipo: Parte de un <
+Equipo "<b>*" *-up- "<b> 1 " Entrenador: Compone a <
+Competencia *-- Juego
+Capitan --|> Jugador: Hereda de > 
+Capitan "1" --* "1" Equipo: Compone a >
 
 newpage 
+'left to right direction
+'right to left direccion
 
-object Persona {
-    Leo1
-    042412345678
-    La Guaira
+package Venezuela{
+    object Entrenador{
+        "Entrenador 1"
+    }
+
+    package integrantes {
+        object Jugador1{
+            "pepe1"
+            213123123
+            La Guaira
+        }
+        object Jugador2{
+            "pepe2"
+            213123123
+            La Guaira
+        }
+        object Jugador3{
+            "pepe3"
+            213123123
+            La Guaira
+        }
+        object Jugador4{
+            "pepe4"
+            213123123
+            La Guaira
+        }
+        object Jugador5{
+            "pepe5"
+            213123123
+            La Guaira
+        }
+        object Capitan6{
+            "pepe6"
+            213123123
+            La Guaira
+        }
+    }
 }
 
-object Registro {
-    "1"
-    "250"
+
+package Colombia{
+    object Entrenador2{
+        "Entrenador 2"
+    }
+
+    package integrantes1 {
+        object Jugador7{
+            "pepe1"
+            213123123
+            La Guaira
+        }
+        object Jugador8{
+            "pepe2"
+            213123123
+            La Guaira
+        }
+        object Jugador9{
+            "pepe3"
+            213123123
+            La Guaira
+        }
+        object Jugador10{
+            "pepe4"
+            213123123
+            La Guaira
+        }
+        object Jugador11{
+            "pepe5"
+            213123123
+            La Guaira
+        }
+        object Capitan12{
+            "pepe6"
+            213123123
+            La Guaira
+        }
+    }
 }
 
+map Juego {
+    Venezuela =>
+    Colombia =>
+    Lugar => Santiago de Chile
+}
 
+Juego::Equipo1 ..> Venezuela
+Juego::Equipo2 ..> Colombia
 
-
-
+object LosPanamericanos {
+    - Titulo = "Chile 2023"
+}
+LosPanamericanos *-- Juego
 
 
 @enduml
