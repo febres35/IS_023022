@@ -50,7 +50,7 @@ Capitan "1" --* "1" Equipo: Compone a >
 newpage 
 'left to right direction
 'right to left direccion
-
+/'
 package Venezuela{
     object Entrenador{
         "Entrenador 1"
@@ -129,20 +129,152 @@ package Colombia{
         }
     }
 }
-
+'/
 map Juego {
     Venezuela =>
     Colombia =>
     Lugar => Santiago de Chile
 }
+object Venezuela{
+    -Nombre = "Equipo 1"
+    -pais = Venezuela
+}
+object Colombia{
+    -Nombre = "Equipo 2"
+    -Pais = colombia
+}
 
-Juego::Equipo1 ..> Venezuela
-Juego::Equipo2 ..> Colombia
+Juego *-- Venezuela
+Juego *-- Colombia
 
 object LosPanamericanos {
     - Titulo = "Chile 2023"
 }
 LosPanamericanos *-- Juego
 
+
+object EntrenadorV {
+    Nivel = 5
+    experiencia = 25
+}
+
+
+object EntrenadorC {
+    Nivel = 5
+    experiencia = 25
+}
+
+EntrenadorV *-- Venezuela
+EntrenadorC *-- Colombia
+
+object J1 {
+    "o1"
+    "042412123123"
+    "La Guaira"
+    "numero 1"
+    "Posicion 1"
+}
+
+object J2 {
+    "o2"
+    "042412123123"
+    "La Guaira"
+    "numero 2"
+    "Posicion 2"
+}
+
+object J3 {
+    "o3"
+    "042412123123"
+    "La Guaira"
+    "numero 3"
+    "Posicion 3"
+}
+
+object J4 {
+    "o4"
+    "042412123123"
+    "La Guaira"
+    "numero 4"
+    "Posicion 4"
+}
+
+object J5 {
+    "o5"
+    "042412123123"
+    "La Guaira"
+    "numero 5"
+    "Posicion 5"
+}
+
+object C6 {
+    "o6"
+    "042412123123"
+    "La Guaira"
+    "numero 6"
+    "Posicion 6"
+}
+
+object J7 {
+    "o7"
+    "042412123123"
+    "La Guaira"
+    "numero 7"
+    "Posicion 1"
+}
+
+object J8 {
+    "o8"
+    "042412123123"
+    "La Guaira"
+    "numero 8"
+    "Posicion 2"
+}
+
+object J9 {
+    "o9"
+    "042412123123"
+    "La Guaira"
+    "numero 9"
+    "Posicion 3"
+}
+
+object J10 {
+    "o10"
+    "042412123123"
+    "La Guaira"
+    "numero 10"
+    "Posicion 4"
+}
+
+object J11 {
+    "o11"
+    "042412123123"
+    "La Guaira"
+    "numero 11"
+    "Posicion 5"
+}
+
+object C12 {
+    "o12"
+    "042412123123"
+    "La Guaira"
+    "numero 12"
+    "Posicion 6"
+}
+
+Venezuela *-- J1
+Venezuela *-- J2
+Venezuela *-- J3
+Venezuela *-- J4
+Venezuela *-- J5
+Venezuela *-- C6
+
+Colombia *-- J7
+Colombia *-- J8
+Colombia *-- J9
+Colombia *-- J10
+Colombia *-- J11
+Colombia *-- C12
 
 @enduml
