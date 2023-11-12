@@ -1,0 +1,47 @@
+@startuml Proyecto Estatos del Sistema
+
+title Sistema para la Certificacion de cuersos
+scale 550 width
+'scale 1.5 | scale 200 width | scale 100 height | scale [max] 200x100
+[*] --> Sistema
+
+state Sistema {
+    [*] --> Authentication: Credenciales
+    state actores <<fork>>
+    Authentication --> actores
+
+    actores -left-> Profesor
+    actores -right-> Participante 
+
+
+    state accionesProfesor <<fork>>
+    Profesor --> accionesProfesor
+    accionesProfesor -left-> participante: Registra
+    state ex <<fork>>
+    accionesProfesor --> ex : Examen
+    ex --> SetCantPreg 
+    ex --> SetTime 
+
+    
+    
+    Participante --> Examen: select
+    state accionesParticipante <<fork>>
+    Examen --> accionesParticipante: acepta\ninstrucciones
+    accionesParticipante --> TotalResponse
+    accionesParticipante --> Total
+    accionesParticipante --> reponse
+    accionesParticipante --> preview
+    accionesParticipante --> next
+    accionesParticipante --> end
+
+    
+
+    state SetRegistro <<fork>>
+    Participante -right-> SetRegistro: set
+    SetRegistro --> pass
+    SetRegistro --> email
+
+}
+
+
+@enduml
