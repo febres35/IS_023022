@@ -1,0 +1,94 @@
+@startuml
+
+title ""
+header "Proyecto Ingenieria de Software 2023"
+
+abstract Persona{
+    -name:str
+    -lastName:str
+    -id
+    #email
+}
+
+abstract Admin {
+    #{method} register(idUser)
+}
+
+class User {
+    -password:str
+    +{method} setPass(str)
+    +{method} setEmail
+}
+
+class Profesor {
+    +{method}setTime(idCurso, idExamen)
+    +{method}set_NQuest(idCurso, idExamen)
+}
+
+class Participante{
+    +Cursos:list
+    +Certificados:list
+
+}
+
+
+Class Examen{
+    -time:date
+    -nQuestion:int
+}
+
+
+Class Question{
+    -option:list
+    -quest:str
+}
+
+Class Curso {
+    -name
+    -id
+
+}
+
+Class Domain{
+    -name
+}
+
+class Certificado{
+    -fecha:date
+}
+
+Persona <|-- User
+Admin <|-- Profesor
+User <|-left- Profesor
+User <|-- Participante 
+
+
+
+
+'------------------------------
+
+Curso "1" *-left-"1..*" Examen
+note top of Curso : <b>1</b> o <b>mas</b> examenes\n<b>son parte elemental\nde un curso
+Examen "1" *-- "1..*" Question
+note left of Examen :  <b>1</b> examen tiene\n<b>1</b> o mas\npreguntas
+note right of Question : <b>1 o mas son\nparte de\n<b>1 examne
+Domain "1..*"*-right- "1" Question
+note top of Domain: <b>una pregunta\npertenece a\n<b>1 o mas Dominios
+
+'-----------------------------
+
+
+Curso "1" o-right- "0..*" Participante
+note right of Participante: <b>Es participante el\n<b>que esta en\n<b>un curso\n<b>Un Curso tiene\n<b>0 o mas Participantes
+Profesor "1..*" *-- "1..*" Curso
+note left of Profesor: <b>Un o mas</b> profesores\nImparten <b>1 o</b>\n<b>mas</b> Cursos
+Curso -- Certificado: > Emite
+Participante -- Certificado: < Recibe
+
+
+
+
+
+
+
+@enduml
