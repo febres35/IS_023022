@@ -1,8 +1,10 @@
-import java.util.Scanner;
-import java.util.Random;
+import java.util.*;
+import java.lang.*;
+//import java.util.Scanner;
+//import java.util.Random;
 public class ejercicio4 {   
     
-    private static boolean theWholeNumberIs_loopFor( int[] list, int var){
+    private static boolean isElementOf( int[] list, int var){
         for (int i = 0; i < list.length; i++){
             if (list[i] == var){
                 return true;
@@ -10,6 +12,14 @@ public class ejercicio4 {
         }
         return false;
     } 
+    private static boolean theWholeNumberIs_loopFor( int[] list, int var){
+        for (int i = 0; i < list.length; i++){
+            if (list[i] == var){
+                return true;
+            }
+        }
+        return false;
+    }
 
     private static boolean theWholeNumberIs_loopWhile( int[] list, int var){
         int cont = 0;
@@ -44,22 +54,42 @@ public class ejercicio4 {
         Scanner entry = new Scanner(System.in);
         System.out.print("indicate the size of array: ");
         int len = entry.nextInt();
-        int[] list = new int[len];
-        initArray(list);
-        System.out.print("Search integer: ");
-        int var = entry.nextInt();
-        //boolean exists = theWholeNumberIs_loopWhile(list, var);
-        boolean exists = theWholeNumberIs_loopFor(list, var);
-        entry.close();
-        for (int x: list){
-            System.out.print(x + ", ");
+        
+        try{
+            int[] list = new int[len];
+            initArray(list);
+            System.out.print("Search integer: ");
+            int var = entry.nextInt();
+            //boolean exists = theWholeNumberIs_loopWhile(list, var);
+            //boolean exists = theWholeNumberIs_loopFor(list, var);
+            boolean exists = isElementOf(list, var);
+            entry.close();
+            for (int x: list){
+                System.out.print(x + ", ");
+            }
+            System.out.println(" ");
+            if (exists){
+                System.out.println("El numero " + var + " Existe en el arreglo de enteros.");
+            }else{
+                System.out.println("El numero " + var + " No existe en el arreglo de enteros.");
+            }
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
+        /*}catch (NegativeArraySizeException e){
+            System.out.println("El tamaño indicado no corresponde");
+            e.printStackTrace();
+        }catch(java.util.InputMismatchException e){
+            System.out.println("Solo puede utilizar valores de tipo entero");
+            e.printStackTrace();
+        }catch (ArrayIndexOutOfBoundsException  e){
+            System.out.println("Solo puede utilizar valores de tipo entero positivo");
+            e.printStackTrace();   
+         */}finally{
+            entry.close();
         }
-        System.out.println(" ");
-        if (exists){
-            System.out.println("El numero " + var + " Existe en el arreglo de enteros.");
-        }else{
-            System.out.println("El numero " + var + " No existe en el arreglo de enteros.");
-        }
+
 
     }
 }
