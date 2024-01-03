@@ -1,5 +1,4 @@
 import java.util.*;
-import java.lang.*;
 //import java.util.Scanner;
 //import java.util.Random;
 public class ejercicio4 {   
@@ -60,8 +59,6 @@ public class ejercicio4 {
             initArray(list);
             System.out.print("Search integer: ");
             int var = entry.nextInt();
-            //boolean exists = theWholeNumberIs_loopWhile(list, var);
-            //boolean exists = theWholeNumberIs_loopFor(list, var);
             boolean exists = isElementOf(list, var);
             entry.close();
             for (int x: list){
@@ -77,16 +74,7 @@ public class ejercicio4 {
         }catch(Exception e){
             System.out.println(e.getMessage());
             //e.printStackTrace();
-        /*}catch (NegativeArraySizeException e){
-            System.out.println("El tamaño indicado no corresponde");
-            e.printStackTrace();
-        }catch(java.util.InputMismatchException e){
-            System.out.println("Solo puede utilizar valores de tipo entero");
-            e.printStackTrace();
-        }catch (ArrayIndexOutOfBoundsException  e){
-            System.out.println("Solo puede utilizar valores de tipo entero positivo");
-            e.printStackTrace();   
-         */}finally{
+        }finally{
             entry.close();
         }
 
