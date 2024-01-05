@@ -52,7 +52,7 @@ public class Equipment  {
 
     }
 
-    private static int setEquipmentFile(String desc,int ct, float mu,String nf,String ci){
+    public static int setEquipmentFile(String desc,int ct, float mu,String nf,String ci){
         try{
             FileWriter file = new FileWriter("inventario.txt", true);
             BufferedWriter buffer =new BufferedWriter(file);
@@ -167,7 +167,7 @@ public class Equipment  {
     public static void main(String[] args) {
 
         ArrayList<Equipment> lista = new ArrayList<>();
-        equipmentLoadingInterface();
+        //equipmentLoadingInterface();
         Equipment e = new Equipment();
         lista = e.getListOfEquipment();
         System.out.println(lista);
