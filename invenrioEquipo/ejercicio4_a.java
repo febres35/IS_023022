@@ -1,7 +1,7 @@
 import java.util.*;
 //import java.util.Scanner;
 //import java.util.Random;
-public class ejercicio4 {   
+public class ejercicio4_a {   
     
     private static boolean isElementOf( int[] list, int var){
         for (int i = 0; i < list.length; i++){
