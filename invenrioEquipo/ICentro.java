@@ -112,6 +112,14 @@ public class ICentro extends JFrame implements ActionListener {
         }else{
             if (e.getSource() == exitButton){
                 dispose();
+            }else{
+                IReporte iReportInterface = new IReporte();
+                setVisible(false);
+                iReportInterface.iReport.setBounds(0, 0, 470, 350);
+                iReportInterface.iReport.setVisible(true);
+                iReportInterface.iReport.setResizable(false);
+                iReportInterface.iReport.setLocationRelativeTo(null);
+                
             }
         }
     }

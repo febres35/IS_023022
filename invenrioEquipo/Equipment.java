@@ -57,7 +57,7 @@ public class Equipment  {
             FileWriter file = new FileWriter("inventario.txt", true);
             BufferedWriter buffer =new BufferedWriter(file);
             LocalDate date = LocalDate.now();
-            String data = (desc + "#" + ct + "#"+ mu+ "#" +date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear()+ "#" + nf + "#"+ ci+"\n");
+            String data = (desc + "#" + ct + "#"+ mu*ct + "#" +date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear()+ "#" + nf + "#"+ ci+"\n");
             buffer.write(data);
             buffer.close();
             return 0;
@@ -114,7 +114,7 @@ public class Equipment  {
                     if (i >= 0){
                         Equipment temp = list.get(i);
                         temp.setTotalAmount(temp.getTotalAmount() + register.getTotalAmount());
-                        temp.setTotalUnitPrice(temp.getTotalUnitPrice() + register.getTotalUnitPrice());
+                        temp.setTotalUnitPrice(temp.getTotalUnitPrice() + register.getTotalUnitPrice() * register.getTotalAmount());
                     }
                 }else{
                     list.add(register);
