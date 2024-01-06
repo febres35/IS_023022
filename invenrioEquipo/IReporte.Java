@@ -107,9 +107,9 @@ public class IReporte extends JFrame implements ActionListener{
                 ciTextField.setVisible(false);
                 totalizarBotton.setVisible(false);
                 ciLabel.setVisible(false);
-                totalLabel.setBounds(50, 210, 110, 20);
-                AmountsLabel.setBounds(50, 230, 110, 20);            
-                totalPriceLabel.setBounds(50, 250, 110, 20);
+                totalLabel.setBounds(20, 230, 110, 20);
+                AmountsLabel.setBounds(20, 250, 110, 20);            
+                totalPriceLabel.setBounds(20, 270, 110, 20);
                 
                 scroll.setBounds(10, 70, 440, 130);
                 AmountsLabel.setText("_ " + totalAmount + " _ Equipos" );
