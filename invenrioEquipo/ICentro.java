@@ -2,12 +2,13 @@
  * ICentro
  */
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JFrame;
 import java.awt.event.*;
 public class ICentro extends JFrame implements ActionListener {
-    private JTextField descTextField, ctTextField,  muTextField, dataTextField, nfTextField, ciTextField;
+    private RoundTextField descTextField, ctTextField,  muTextField, dataTextField, nfTextField, ciTextField;
     private JLabel titleLabel, descLabel, ctLabel, muLabel, dateLabel, nfLabel, ciLabel;
-    private JButton registerButton, reportButton, exitButton;
+    private RoundButton registerButton, reportButton, exitButton;
     
 
     public ICentro(){
@@ -24,7 +25,7 @@ public class ICentro extends JFrame implements ActionListener {
         descLabel.setBounds(60, 50, 80, 30 );
         add(descLabel);
 
-        descTextField = new JTextField("");
+        descTextField = new RoundTextField(20);
         descTextField.setBounds(140,50, 520,30);
         add(descTextField);
 
@@ -33,7 +34,7 @@ public class ICentro extends JFrame implements ActionListener {
         ctLabel.setBounds(80, 110, 80, 30 );
         add(ctLabel);
 
-        ctTextField = new JTextField("");
+        ctTextField = new RoundTextField(20);
         ctTextField.setBounds(140,110, 50,30);
         add(ctTextField);
 
@@ -42,7 +43,7 @@ public class ICentro extends JFrame implements ActionListener {
         muLabel.setBounds(300, 110, 200, 30 );
         add(muLabel);
 
-        muTextField = new JTextField("");
+        muTextField = new RoundTextField(20);
         muTextField.setBounds(400,110, 260,30);
         add(muTextField);
         
@@ -51,7 +52,7 @@ public class ICentro extends JFrame implements ActionListener {
         dateLabel.setBounds(130, 160, 100, 50 );
         add(dateLabel);
 
-        dataTextField = new JTextField("");
+        dataTextField = new RoundTextField(20);
         dataTextField.setBounds(230,170, 90,30);
         add(dataTextField);
 
@@ -60,7 +61,7 @@ public class ICentro extends JFrame implements ActionListener {
         nfLabel.setBounds(340, 170, 80, 30 );
         add(nfLabel);
 
-        nfTextField = new JTextField("");
+        nfTextField = new RoundTextField(20);
         nfTextField.setBounds(420,170, 240,30);
         add(nfTextField);
 
@@ -69,24 +70,24 @@ public class ICentro extends JFrame implements ActionListener {
         ciLabel.setBounds(80, 230, 180, 30 );
         add(ciLabel);
 
-        ciTextField = new JTextField("");
+        ciTextField = new RoundTextField(20);
         ciTextField.setBounds(270,230, 190,30);
         add(ciTextField);
 
 
         
         //Registro de data 
-        registerButton = new JButton("Register data");
+        registerButton = new RoundButton("Register data");
         registerButton.setBounds(200, 320 , 150, 30);
         add(registerButton);
         registerButton.addActionListener(this);
 
-        reportButton = new JButton("Generate Report");
+        reportButton = new RoundButton("Generate Report");
         reportButton.setBounds(360, 320 , 150, 30);
         add(reportButton);
         reportButton.addActionListener(this);
 
-        exitButton = new JButton("Exit");
+        exitButton = new RoundButton("Exit");
         exitButton.setBounds(520, 320 , 150, 30);
         add(exitButton);
         exitButton.addActionListener(this);
